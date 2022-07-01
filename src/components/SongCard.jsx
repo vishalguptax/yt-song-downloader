@@ -22,19 +22,12 @@ export const SongCard = ({ title, downloadLink, imgSrc, views, duration }) => {
             <p>🕒 Duration : {duration}</p>
           </div>
         </div>
-        {downloadLink ? (
-          <button className="downloadBtn">
-            <a href={downloadLink}>
-              <FaDownload style={{ marginRight: "16px" }} /> Download
-            </a>
-          </button>
-        ) : (
-          <button className="downloadBtn">
-            <a href={downloadLink}>
-              😐 Daily Limit Over
-            </a>
-          </button>
-        )}
+
+        <button className="downloadBtn">
+          <a href={downloadLink}>
+            <FaDownload style={{ marginRight: "16px" }} /> Download
+          </a>
+        </button>
       </div>
     </div>
   );
