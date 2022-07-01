@@ -1,0 +1,79 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 240px;
+    border-top: 8px solid #FF0000D9;
+}
+
+.logo {
+    color: #f3f4f6;
+    font-family: 'Fugaz One',
+        cursive;
+
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoIcon {
+    margin-right: 10px;
+    font-family: inherit;
+    padding: 1px 10px;
+    color: #f3f4f6;
+    background: rgba(255, 0, 0, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.credits {
+    color: white;
+}
+
+.creditLink {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-weight: 500;
+    transition: all 300ms ease-in;
+    ;
+}
+
+.creditLink:hover {
+    color: #fca5a5;
+
+}
+
+.creditLink::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    visibility: hidden;
+    bottom: 0;
+    left: -100%;
+    height: 1px;
+    background-color: white;
+    transition: all 200ms ease-in;
+}
+
+.creditLink:hover::after {
+    left: 0;
+    width: 100%;
+    visibility: visible;
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        padding: 20px 40px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,33 @@
+footer {
+    height: 40px;
+    background-color: #e2e8f0;
+    width: 100%;
+    position: fixed;
+    border-top: 5px solid white;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4b5563;
+}
+
+footer>p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 500;
+}
+
+.gitLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    color: inherit;
+    transition: all 200ms ease;
+}
+
+.gitLink:hover {
+    color: black;
+}
