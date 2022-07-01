@@ -9,7 +9,7 @@ export const Footer = () => {
           className="gitLink"
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/vishalguptax"
+          href="https://github.com/vishalguptax/yt-song-downloader"
         >
           GitHub <FaGithub style={{ marginLeft: "5px" }} />
         </a>

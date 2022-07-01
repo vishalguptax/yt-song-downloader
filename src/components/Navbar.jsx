@@ -11,7 +11,7 @@ export const Navbar = () => {
           className="creditLink"
           target="_blank"
           rel="noreferrer"
-          href="https://g.dev/vishalgupta"
+          href="https://www.linkedin.com/in/vishalgupta26/"
         >
           Vishal
         </a>
