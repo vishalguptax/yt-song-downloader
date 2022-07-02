@@ -24,15 +24,15 @@ export const SongCard = ({ title, downloadLink, imgSrc, views, duration }) => {
         </div>
         {downloadLink ? (
           <button className="downloadBtn">
-            <a href={downloadLink} target="_blank" rel="noreferrer" download>
+            <a className="enabledBtn" href={downloadLink} target="_blank" rel="noreferrer" download>
               <FaDownload style={{ marginRight: "16px" }} />
               Download
             </a>
           </button>
         ) : (
           <button className="downloadBtn" >
-            <a href={downloadLink} rel="noreferrer" download>
-              Press Go
+            <a className="disabledBtn" href={downloadLink} rel="noreferrer" download>
+              "Press Go to generate download link if it doesen't work then daily download limit is exceeded"
             </a>
           </button>
         )}

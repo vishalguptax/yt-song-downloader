@@ -24,6 +24,6 @@ export const ytSongApi = async (videoUrl) => {
     return data;
   } catch (error) {
     console.log(error);
-    // alert("Sorry! Daily Limit is over, please try after sometime | ( Daily download limit is 50 )");
+    alert("😥 Sorry, Daily Limit is over, please try after sometime! | ( Daily download limit is 50 )");
   }
 };

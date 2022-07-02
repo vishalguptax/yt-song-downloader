@@ -4,7 +4,7 @@ nav {
     justify-content: space-between;
     padding: 20px 240px;
     border-top: 5px solid pink;
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
 .logo {
@@ -95,7 +95,7 @@ nav {
 
 @media only screen and (max-width: 600px) {
     nav {
-        padding: 20px 40px;
+        padding: 30px 40px;
     }
 
     .logo {

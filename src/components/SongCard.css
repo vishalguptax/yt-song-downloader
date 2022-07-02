@@ -29,7 +29,7 @@
     object-fit: cover;
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .download {
@@ -50,9 +50,9 @@
 
 .title {
     font-family: 'Fugaz One',
-    cursive;
+        cursive;
     font-family: 'Hi Melody',
-    cursive;
+        cursive;
     -webkit-text-stroke: 0.2px #1f2937;
     font-size: 2rem;
     color: white;
@@ -78,12 +78,22 @@
 
 }
 
-.downloadBtn>a {
+.enabledBtn {
     color: white;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.disabledBtn {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .downloadBtn {
@@ -210,9 +220,10 @@
         height: 300px;
         width: 500px;
     }
+
     .thumb {
-       max-width: 450px ;
-       max-height: 250px;
+        max-width: 450px;
+        max-height: 250px;
     }
 
     .download {
@@ -262,7 +273,6 @@
     }
 
     .title {
-        font-size: 1.4rem;
         text-align: center;
     }
 
