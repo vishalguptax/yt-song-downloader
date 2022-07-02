@@ -4,6 +4,6 @@ Simply copy and paste any youtube video link and convert it to audio and downloa
 
 Note : Site is limited to only 50 downloads per day.
 
-Live App : **[SIP Calculator](https://ytsongloader.netlify.app/)**
+Live App : **[YT Song Downloader](https://ytsongloader.netlify.app/)**
 
 ![YT Song Downloader](https://ytsongloader.netlify.app/sharingImg.png)
