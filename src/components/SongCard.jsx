@@ -16,7 +16,7 @@ export const SongCard = ({ title, downloadLink, imgSrc, views, duration }) => {
       </div>
       <div className="download">
         <div className="metaData">
-          <p className="title">"{(title || "").replace(/Video/g, "Song")}"</p>
+          <p className="title">"{title}"</p>
           <div className="details">
             <p>🔥 Hits : {hits}</p>
             <p>🕒 Duration : {duration}</p>
@@ -24,7 +24,7 @@ export const SongCard = ({ title, downloadLink, imgSrc, views, duration }) => {
         </div>
 
         <button className="downloadBtn">
-          <a href={downloadLink}>
+          <a href={downloadLink} target="_blank" rel="noreferrer" download>
             <FaDownload style={{ marginRight: "16px" }} /> Download
           </a>
         </button>

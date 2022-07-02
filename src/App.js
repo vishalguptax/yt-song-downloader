@@ -9,10 +9,9 @@ function App() {
   const [videoData, setVideoData] = useState([]);
   const [trend, setTrend] = useState([]);
 
-  
-  var myString = `${trend?.thumbnails?.[1]?.url}`;
-  var shortUrl = myString.substring(0, 48);
-  const altImg = (shortUrl || '').replace(/hqdefault/g,'default');
+  var thumbString = `${trend?.thumbnails?.[1]?.url}`;
+  var shortThumbUrl = thumbString.substring(0, 48);
+  const altImg = (shortThumbUrl || "").replace(/hqdefault/g, "default");
 
   let str = videoData?.thumbUrl || altImg;
   let stringToAdd = "mq";
@@ -21,16 +20,21 @@ function App() {
       str.substring(0, index) + stringToAdd + str.substring(index, str.length)
     );
   }
-
+  var durString = `${videoData?.durata_video}`;
+  const shortDur = durString.substring(0, 10);
+  console.log(shortDur);
   const songTitle = videoData?.titolo ? videoData.titolo : trend?.title;
   const songImg = addStr(str, 35, stringToAdd);
   const songUrl = videoData?.urlMp3;
   const songDur = videoData?.durata_video
-    ? videoData.durata_video
-    : `${trend?.lengthText} minutes`;
+    ? shortDur
+    : `${trend.lengthText} minutes`;
   const songViews = videoData?.contatore_visualizzazioni
     ? videoData?.contatore_visualizzazioni
-    : (((trend?.viewCountText || '').replace(/views/g,''))||'').replace(/,/g,'');
+    : ((trend?.viewCountText || "").replace(/views/g, "") || "").replace(
+        /,/g,
+        ""
+      );
 
   useEffect(() => {
     ytTrendApi().then((data) => {
