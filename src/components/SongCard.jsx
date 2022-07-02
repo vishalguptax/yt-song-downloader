@@ -16,7 +16,7 @@ export const SongCard = ({ title, downloadLink, imgSrc, views, duration }) => {
       </div>
       <div className="download">
         <div className="metaData">
-          <p className="title">"{title}"</p>
+          <p className="title">{title}</p>
           <div className="details">
             <p>🔥 Hits : {hits}</p>
             <p>🕒 Duration : {duration}</p>

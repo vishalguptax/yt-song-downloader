@@ -2,8 +2,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 240px;
-    border-top: 8px solid #FF0000D9;
+    padding: 30px 240px;
+    border-top: 5px solid pink;
 }
 
 .logo {
@@ -71,7 +71,7 @@ nav {
 
 @media only screen and (max-width: 1300px) {
     nav {
-        padding: 20px 140px;
+        padding: 50px 140px;
     }
 
     .logo {
@@ -83,7 +83,7 @@ nav {
 
 @media only screen and (max-width: 900px) {
     nav {
-        padding: 20px 100px;
+        padding: 25px 100px;
     }
 
     .logo {

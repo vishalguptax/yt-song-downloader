@@ -1,6 +1,6 @@
 footer {
     height: 40px;
-    background-color: #e2e8f0;
+    background-color: #ccc;
     width: 100%;
     position: fixed;
     border-top: 5px solid white;
@@ -8,7 +8,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #4b5563;
+    color: #3a364b;
 }
 
 footer>p {
@@ -17,6 +17,7 @@ footer>p {
     align-items: center;
     width: 100%;
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .gitLink {
@@ -32,8 +33,17 @@ footer>p {
     color: black;
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 900px) {
     footer {
-        font-size: 14px;
+        font-size: 10px;
+        height: 40px;
+    }
+} */
+
+@media only screen and (max-width: 600px) {
+    
+    footer > p {
+        font-size: 0.9rem;
     }
 }
+
