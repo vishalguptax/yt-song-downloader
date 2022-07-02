@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { DownloadForm, Footer, Navbar, SongCard } from "./components";
 import "./App.css";
 import { ytSongApi, ytTrendApi } from "./api";
+import axios from "axios";
 
 function App() {
   const [inputData, setInputData] = useState("");
@@ -12,6 +13,26 @@ function App() {
 
   const [trend, setTrend] = useState([]);
 
+  // Accessing user's country using ipAPI
+  const [countryCode, setCountryCode] = useState("");
+
+  const getGeoInfo = () => {
+    axios
+      .get("https://ipapi.co/json/")
+      .then((response) => {
+        let data = response.data;
+        setCountryCode(data?.country_code);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    getGeoInfo();
+  }, []);
+
+  //-------------------------------------------------
+
   // Truncating the trending video thumbnail url
   var thumbString = `${trend?.thumbnails?.[1]?.url}`;
   var shortThumbUrl = thumbString.substring(0, 48);
@@ -20,7 +41,9 @@ function App() {
 
   // Modifying the user's video thumbnail url to render better quality image
   let str = videoData?.thumbUrl || altImg;
-  let stringToAdd = "mq";
+  let stringToAdd = "sd";
+
+  // Creating a function to add text in the middle of a string
   function addStr(str, index, stringToAdd) {
     return (
       str.substring(0, index) + stringToAdd + str.substring(index, str.length)
@@ -30,7 +53,8 @@ function App() {
 
   // Modifying the user's videeo length string to short text
   var durString = `${videoData?.durata_video}`;
-  const shortDur = durString.substring(0, 10);
+  var shortDur = durString.replace(/\D/g, "");
+  shortDur = `${addStr(shortDur, 1, ":")} minutes`;
   //------------------------------------------
 
   const songTitle = videoData?.titolo ? videoData.titolo : trend?.title;
@@ -54,10 +78,10 @@ function App() {
 
   // Receiving data from Trending video api and setting it to the trend array
   useEffect(() => {
-    ytTrendApi().then((data) => {
+    ytTrendApi(countryCode).then((data) => {
       setTrend(data?.contents?.[0]?.video);
     });
-  }, []);
+  }, [countryCode]);
   //---------------------------------------------
 
   // Receiving data from song api and setting it to the videodata array
@@ -68,16 +92,18 @@ function App() {
   }, [videoUrl]);
   // -----------------------------------------------
 
-  // Taking user's input url from input element and setting it's value to the inputData 
+  // Taking user's input url from input element and setting it's value to the inputData
   const handleChange = (e) => {
     setInputData(e.target.value);
   };
   //--------------------------------------------
 
   // When Go button clicks, setting the value of videoUrl received from user's input value
+  let trendingVideoUrl = trend?.videoId;
+  trendingVideoUrl = `https://www.youtube.com/watch?v=${trendingVideoUrl}`;
   const handleSubmit = (e) => {
     e.preventDefault();
-    setVideoUrl(inputData);
+    setVideoUrl(inputData ? inputData : trendingVideoUrl);
   };
   //---------------------------------------
 

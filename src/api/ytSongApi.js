@@ -5,6 +5,8 @@ const URL =
 
 
 export const ytSongApi = async (videoUrl) => {
+
+
   try {
     const { data } = await axios.get(URL, {
       params: {
@@ -15,12 +17,13 @@ export const ytSongApi = async (videoUrl) => {
         regenerate: "true",
       },
       headers: {
-        "X-RapidAPI-Key": process.env.REACT_APP_YTSONG_API_KEY,
+        "X-RapidAPI-Key": process.env.REACT_APP_YT_RAPIDAPI_KEY,
         "X-RapidAPI-Host": "t-one-youtube-converter.p.rapidapi.com",
       },
     });
     return data;
   } catch (error) {
     console.log(error);
+    // alert("Sorry! Daily Limit is over, please try after sometime | ( Daily download limit is 50 )");
   }
 };

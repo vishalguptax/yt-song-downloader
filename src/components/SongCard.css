@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Hi+Melody&display=swap');
+
 .songCard {
     display: flex;
     justify-content: space-between;
@@ -12,7 +14,7 @@
     justify-content: center;
     align-items: center;
     height: 300px;
-    width: 500px;
+    width: 450px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -22,15 +24,17 @@
 }
 
 .thumb {
-    width: 400px;
-    height: 250px;
+    max-width: 350px;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: 16px;
-    border: 5px solid #e2e8f0;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .download {
     height: 300px;
-    width: 500px;
+    width: 450px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -40,18 +44,20 @@
     display: flex;
     flex-direction: column;
     height: 70%;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: left;
 }
 
 .title {
     font-family: 'Fugaz One',
-        cursive;
+    cursive;
+    font-family: 'Hi Melody',
+    cursive;
     -webkit-text-stroke: 0.2px #1f2937;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
-    margin: 10px 0;
     font-weight: 400;
+    text-align: center;
 }
 
 .details {
@@ -204,10 +210,9 @@
         height: 300px;
         width: 500px;
     }
-
     .thumb {
-        width: 400px;
-        height: auto;
+       max-width: 450px ;
+       max-height: 250px;
     }
 
     .download {
@@ -242,8 +247,7 @@
     }
 
     .thumb {
-        width: 350px;
-        height: auto;
+        max-width: 300px;
     }
 
     .download {

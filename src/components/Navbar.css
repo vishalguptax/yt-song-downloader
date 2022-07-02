@@ -2,8 +2,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 240px;
+    padding: 20px 240px;
     border-top: 5px solid pink;
+    padding-top: 40px;
 }
 
 .logo {
