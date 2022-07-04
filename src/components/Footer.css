@@ -74,5 +74,7 @@ footer>p {
    .note {
        display: none;
    }
-
+footer {
+    height: 40px;
+}
 }
