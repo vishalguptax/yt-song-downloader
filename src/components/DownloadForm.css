@@ -7,7 +7,9 @@
 
 .inputSection {
     display: flex;
-    padding: 10px 16px;
+    padding: 10px 10px;
+    justify-content: space-between;
+    align-items: center;
     width: 80%;
     height: 65px;
     border: 2px solid #e2e8f0;
@@ -35,6 +37,7 @@
 
 .pasteBtn {
     width: 20%;
+    height: 40px;
     display: flex;
     padding: 0 20px;
     justify-content: space-evenly;
@@ -52,7 +55,7 @@
 
 .pasteBtn:hover {
     color: black;
-    padding: 0 16px;
+    padding: 0 30px;
     background-color: #face3d;
 }
 
@@ -124,7 +127,7 @@
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
     .downloadForm {
         padding: 10px 40px;
     }
@@ -154,5 +157,36 @@
 
     .goBtn:hover {
         border: 8px solid white;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .downloadForm {
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .downloadForm {
+        padding: 10px 20px;
+    }
+    .inputSection {
+        height: 58px;
+    }
+    .inputField {
+        font-size: 0.9rem;
+        width: 70%;
+    }
+    .pasteBtn {
+        font-size: 0.9rem;
+        padding: 0 5px;
+        width: 30%;
+    }
+    .goBtn {
+        height: 60px;
+        width: 60px;
+        font-size: 2rem;
+        border: 8px solid rgba(0, 185, 250, 0.25);
+        transition: all 300ms ease;
     }
 }

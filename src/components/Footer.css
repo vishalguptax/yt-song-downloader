@@ -58,3 +58,21 @@ footer>p {
         font-size: 10px;
     }
 }
+
+@media only screen and (max-width: 480px) {
+  
+ footer>p {
+     font-size: 0.8rem;
+ }
+
+ .note {
+     font-size: 8px;
+ }
+}
+
+@media only screen and (max-width: 420px) {
+   .note {
+       display: none;
+   }
+
+}

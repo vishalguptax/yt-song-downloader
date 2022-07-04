@@ -97,7 +97,6 @@
 }
 
 .downloadBtn {
-
     align-items: center;
     appearance: none;
     background-clip: padding-box;
@@ -242,7 +241,8 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 640px) {
     .songCard {
         flex-direction: column;
         padding: 25px 40px;
@@ -279,4 +279,64 @@
     .downloadBtn {
         margin-top: 20px;
     }
+}
+
+@media only screen and (max-width: 480px) {
+    .songCard {
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+
+    .metaData {
+        align-items: center;
+    }
+
+    .imgCard {
+        height: 250px;
+        width: 380px;
+    }
+
+    .thumb {
+        max-width: 300px;
+    }
+
+    .download {
+        height: 250px;
+        width: 400px;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+    .songCard {
+        flex-direction: column;
+        padding: 25px 10px;
+    }
+
+    .metaData {
+        align-items: center;
+    }
+
+    .imgCard {
+        height: 250px;
+        width: 350px;
+    }
+
+    .thumb {
+        max-width: 300px;
+    }
+
+    .details {
+        font-size: 0.8rem;
+    }
+
+    .download {
+        height: 250px;
+        width: 400px;
+        margin-top: 20px;
+        padding: 0 20px;
+    }
+
 }

@@ -93,7 +93,7 @@ nav {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
     nav {
         padding: 30px 40px;
     }
@@ -104,5 +104,20 @@ nav {
     }
     .creditLink{
         font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    nav {
+        padding: 30px 20px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+
+    .creditLink {
+        font-size: 0.8rem;
     }
 }
