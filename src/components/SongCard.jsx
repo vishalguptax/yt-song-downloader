@@ -1,4 +1,5 @@
 import "./SongCard.css";
+import errorImg from "./assets/errorImage.png";
 
 import { FaDownload } from "react-icons/fa";
 
@@ -12,7 +13,11 @@ export const SongCard = ({ title, downloadLink, imgSrc, views, duration }) => {
   return (
     <div className="songCard">
       <div className="imgCard">
-        <img className="thumb" src={imgSrc} alt="" />
+        <img
+          className="thumb"
+          src={imgSrc === "undefinedsd" ? errorImg : imgSrc}
+          alt=""
+        />
       </div>
       <div className="download">
         <div className="metaData">
@@ -31,8 +36,13 @@ export const SongCard = ({ title, downloadLink, imgSrc, views, duration }) => {
             rel="noreferrer"
             download
           >
-            <FaDownload style={{ marginRight: "16px" }} />
-          {downloadLink?('Download'):('Press Go')}
+            {downloadLink ? <FaDownload style={{ marginRight: "16px" }} /> : ""}
+
+            {downloadLink
+              ? "Download"
+              : imgSrc === "undefinedsd"
+              ? "Daily limit exceed"
+              : "Press Go"}
           </a>
         </button>
       </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { DownloadForm, Footer, Navbar, SongCard } from "./components";
 import "./App.css";
-import { ytSongApi, ytTrendApi } from "./api";
+import { ytSongApi, ytTrendApi, randomQuote } from "./api";
 import axios from "axios";
 
 function App() {
@@ -12,6 +12,8 @@ function App() {
   const [videoData, setVideoData] = useState([]);
 
   const [trend, setTrend] = useState([]);
+
+  const [quote, setQuote] = useState("");
 
   // Accessing user's country using ipAPI
   const [countryCode, setCountryCode] = useState("");
@@ -65,7 +67,7 @@ function App() {
 
   const songDur = videoData?.durata_video
     ? shortDur
-    : `${trend.lengthText} minutes`;
+    : `${trend?.lengthText} minutes`;
 
   // Using replace () to replace text on trending video's view count
   const songViews = videoData?.contatore_visualizzazioni
@@ -91,7 +93,11 @@ function App() {
     });
   }, [videoUrl]);
   // -----------------------------------------------
-
+  useEffect(() => {
+    randomQuote().then((data) => {
+      setQuote(data?.content);
+    });
+  }, []);
   // Taking user's input url from input element and setting it's value to the inputData
   const handleChange = (e) => {
     setInputData(e.target.value);
@@ -101,6 +107,7 @@ function App() {
   // When Go button clicks, setting the value of videoUrl received from user's input value
   let trendingVideoUrl = trend?.videoId;
   trendingVideoUrl = `https://www.youtube.com/watch?v=${trendingVideoUrl}`;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setVideoUrl(inputData ? inputData : trendingVideoUrl);
@@ -130,7 +137,7 @@ function App() {
         pasteBtnF={handlePaste}
       />
       <SongCard
-        title={songTitle}
+        title={songTitle?songTitle:quote}
         imgSrc={songImg}
         views={songViews}
         duration={songDur}

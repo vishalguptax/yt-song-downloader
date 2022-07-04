@@ -15,3 +15,12 @@ export const ytTrendApi = async (countryCode) => {
     console.log(error);
   }
 };
+
+export const randomQuote = async () => {
+  try {
+    const { data } = await axios.get(`https://api.quotable.io/random`);
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
